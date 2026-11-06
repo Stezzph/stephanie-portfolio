@@ -447,3 +447,17 @@ body.menu-open .site-header { --header-color: #000; position: fixed; }
 .sr-extra-grid.is-single { grid-template-columns: minmax(0, 380px); justify-content: center; }
 .sr-extra figcaption h3 { font-size: calc(var(--h3-size) * 0.6); }
 @media (max-width: 767px) { .sr-extra-grid.is-pair, .sr-extra-grid.is-single { grid-template-columns: 1fr; } }
+
+/* Videographie: alle Videos direkt abspielbar, kurzer Text daneben */
+.sr-vlist { list-style: none; margin: 0 auto; padding: 0; max-width: 1200px; display: grid; gap: clamp(36px, 5vw, 64px); }
+.sr-vrow { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 48px); align-items: center; }
+.sr-vrow .sr-video { aspect-ratio: 16 / 9; height: auto; background: #000; }
+.sr-vrow .sr-video video { width: 100%; height: 100%; object-fit: contain; }
+.sr-vrow .sr-video.is-portrait { aspect-ratio: 9 / 16; max-height: 560px; justify-self: center; width: auto; height: 560px; }
+.sr-vtext h3 { margin: 0 0 .4em; font-size: calc(var(--h3-size) * 0.7); color: var(--accent); }
+.sr-vtext p { margin: 0; font-size: 1.1rem; line-height: 1.5; max-width: 30em; }
+.sr-vtext .sr-vdate { font-size: .95rem; opacity: .7; margin-bottom: .3em; }
+@media (max-width: 767px) {
+  .sr-vrow { grid-template-columns: 1fr; }
+  .sr-vrow .sr-video.is-portrait { height: 70vh; max-height: 520px; }
+}
