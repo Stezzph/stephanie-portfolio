@@ -15,7 +15,7 @@ Live: https://stezzph.github.io/stephanie-portfolio/
 | `creative-work.html` | Creative Work (`/photo-videographie`) |
 | `projekte.html` | Projekte (Videographie, Fotografie, Design) |
 | `video-soerenberg.html`, `video-bettmeralp.html` | Video-Detailseiten |
-| `swisscom-projekte.html` | Swisscom Projekte (nicht öffentlich, siehe unten) |
+| `swisscom-projekte.html` | Swisscom Projekte (passwortgeschützt, siehe unten) |
 | `contact.html` | Kontakt |
 | `impressum.html`, `datenschutz.html` | Rechtliches |
 | `404.html` | Fehlerseite |
@@ -48,10 +48,10 @@ Squarespace verschlüsselt seine Videos, deshalb wurden sie aus den Originaldate
 | `assets/video/bluenews-1.mp4` | Social Media Projekte – Mayonnaise-Reel | ✅ |
 | `assets/video/bluenews-2.mp4` | Social Media Projekte – Strassenumfrage Fashion-Trends 2026 | ✅ |
 | `assets/video/tauschchallenge.mp4` | Social Media Projekte – Tauschchallenge (unter Blue News) | ✅ |
-| `assets/video/swisscom-1.mp4` | Swisscom – Erklärvideo Data Literacy (Maya) | ✅ |
-| `assets/video/usa-meets-nex.mp4` | Swisscom – USA meets NEX | ✅ |
-| `assets/video/swisscom-4.mp4` | Swisscom – Startvideo Ryanne | ✅ |
-| `assets/video/weihnachtsgeschichte.mp4` | Swisscom – Weihnachtsgeschichte Motion 2025 (oben rechts) | ✅ |
+| verschlüsselt: `swisscom-1.mp4` | Swisscom – Erklärvideo Data Literacy (Maya) | ✅ |
+| verschlüsselt: `usa-meets-nex.mp4` | Swisscom – USA meets NEX | ✅ |
+| verschlüsselt: `swisscom-4.mp4` | Swisscom – Startvideo Ryanne | ✅ |
+| verschlüsselt: `weihnachtsgeschichte.mp4` | Swisscom – Weihnachtsgeschichte Motion 2025 (oben rechts) | ✅ |
 | `assets/video/soerenberg.mp4` | Projekte → Sörenberg | ✅ |
 | `assets/video/bettmeralp.mp4` | Projekte → Bettmeralp | ✅ |
 | `assets/video/goodbye-yesterday.mp4` | Projekte → Videographie, Goodbye Yesterday | ✅ |
@@ -81,18 +81,14 @@ Optional, falls Nachrichten direkt ankommen sollen: ein kostenloser Formular-Die
 
 ## Swisscom Projekte (Passwortschutz)
 
-GitHub Pages kann **keine Seite sicher mit Passwort schützen**. Zudem ist das Repository öffentlich: Alles, was hier hochgeladen wird, kann jede Person sehen, auch Bilder.
-Auf Wunsch ist die Seite **öffentlich, aber versteckt**:
-- Sie ist **nicht in der Navigation** verlinkt (nur über die Karte „Swisscom Arbeiten“ auf Creative Work).
-- Sie hat `noindex`, erscheint also nicht in Google.
-- Wer den Link oder dieses Repository kennt, kann die Inhalte trotzdem sehen.
+Die Seite `swisscom-projekte.html` ist **verschlüsselt** (AES-256-GCM, Schlüssel aus dem Passwort per PBKDF2 mit 310 000 Runden).
+- Im Repository liegen der Seiteninhalt und alle Swisscom-Bilder und -Videos nur als unlesbare Dateien in `assets/private/*.bin`.
+- Erst mit dem richtigen Passwort entschlüsselt der Browser die Inhalte und zeigt die Seite an. Das Passwort selbst steht nirgends im Code.
+- Nach der Eingabe bleibt die Seite bis zum Schliessen des Browser-Tabs offen.
+- Die Seite hat `noindex` und erscheint nicht in Google.
 
-Videos der Swisscom-Seite: siehe Tabelle oben.
-
-Sinnvolle Optionen für einen echten Passwortschutz (alle kostenlos):
-1. **Cloudflare Pages + Cloudflare Access** (empfohlen): Die ganze Seite oder nur `/swisscom-projekte` ist geschützt. Der Login läuft über einen Einmal-Code per E-Mail, bis 50 Personen gratis. Das ist echter serverseitiger Schutz.
-2. **Separates privates Repository + Netlify** mit Basic-Auth (Passwort) – bei Netlify kostenpflichtig, daher eher Option 1.
-3. **Verschlüsselte Seite (z. B. StatiCrypt)**: Der Inhalt wird mit dem Passwort verschlüsselt, die Bilder müssen dafür direkt in die Seite eingebettet werden. Das ist sicher, solange das Passwort stark ist.
+Passwort ändern oder Inhalte austauschen: Die Seite muss mit dem Werkzeug, das sie erstellt hat, neu verschlüsselt werden (Claude kann das übernehmen).
+Hinweis: Ältere Versionen im Verlauf (History) dieses Repositorys enthalten die Swisscom-Dateien noch unverschlüsselt.
 
 ## Lokal ansehen
 
