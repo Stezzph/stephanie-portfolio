@@ -3,7 +3,7 @@
 Statische Version meines Portfolios für **GitHub Pages**. Es braucht kein Squarespace mehr.
 Die Seite ist ein 1:1-Nachbau der Squarespace-Version (`stephanie-roth.squarespace.com`): gleiche Seiten, Texte, Raster, Abstände, Farben und Bilder.
 
-Live: https://stezzph.github.io/stephanie-portfolio/
+Live: https://stayincut.github.io/
 
 ## Seiten
 
