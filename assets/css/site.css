@@ -323,6 +323,12 @@ body.menu-open .site-header { --header-color: #000; position: fixed; }
   .sr-reel-btn { width: 40px; height: 40px; }
 }
 
+/* --- Galerie "Masonry" (Swisscom Projekte) ------------------------------ */
+.sr-masonry { columns: 2; column-gap: 20px; padding: 0 var(--sqs-site-gutter); max-width: calc(var(--sqs-site-max-width) + 2 * var(--sqs-site-gutter)); margin: 0 auto; }
+.sr-masonry-item { margin: 0 0 20px; break-inside: avoid; }
+.sr-masonry-item img { width: 100%; height: auto; display: block; }
+@media (max-width: 767px) { .sr-masonry { columns: 1; padding: 0 var(--sqs-mobile-site-gutter); } }
+
 /* --- Video-Liste (Squarespace "Videos") ------------------------------------ */
 .sr-lessons { padding: 3.3vmax var(--sqs-site-gutter) 6.6vmax; max-width: calc(var(--sqs-site-max-width) + 2 * var(--sqs-site-gutter)); margin: 0 auto; }
 .sr-lessons-nav { margin: 0 0 2rem; font-size: 1rem; font-weight: 500; }
