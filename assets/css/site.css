@@ -441,3 +441,9 @@ body.menu-open .site-header { --header-color: #000; position: fixed; }
   .sr-extra-grid { grid-template-columns: 1fr; gap: 10vw; }
 }
 .sr-extra .is-framed img { border: 1px solid #e6e6e6; }
+.sr-extra .sr-video.is-portrait { aspect-ratio: 9 / 16; }
+.sr-extra .sr-video.is-portrait video { object-fit: contain; }
+.sr-extra-grid.is-pair { grid-template-columns: 3.16fr 1fr; align-items: start; }
+.sr-extra-grid.is-single { grid-template-columns: minmax(0, 380px); justify-content: center; }
+.sr-extra figcaption h3 { font-size: calc(var(--h3-size) * 0.6); }
+@media (max-width: 767px) { .sr-extra-grid.is-pair, .sr-extra-grid.is-single { grid-template-columns: 1fr; } }
