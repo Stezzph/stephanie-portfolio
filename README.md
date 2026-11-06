@@ -68,7 +68,7 @@ Squarespace nutzte **Gopher** von Adobe Fonts. Die Lizenz dafür läuft über da
 Lokal eingebaut ist deshalb **Urbanist**: Sie ist kostenlos (SIL OFL) und Gopher sehr ähnlich.
 
 Falls du Adobe Creative Cloud hast, kannst du Gopher selbst einbinden:
-1. fonts.adobe.com → Gopher → „Zum Webprojekt hinzufügen“, Domain `stezzph.github.io` eintragen
+1. fonts.adobe.com → Gopher → „Zum Webprojekt hinzufügen“, Domain `stayincut.github.io` eintragen
 2. Den `<link rel="stylesheet" href="https://use.typekit.net/xxxxxx.css">` in alle HTML-Dateien (im `<head>`) einfügen
 3. In `assets/css/site.css` bei `--font-heading` und `--font-body` vorne `gopher,` ergänzen
 (Dann im Datenschutz Adobe Fonts erwähnen.)
@@ -99,7 +99,7 @@ Im Projektordner `python3 -m http.server` ausführen und `http://localhost:8000`
 Repository → **Settings → Pages** → Source: „Deploy from a branch“, Branch `main`, Ordner `/ (root)`.
 Nach jedem Push ist die Seite nach ca. 1 Minute aktualisiert.
 
-**Eigene Domain** (optional, z. B. `stephanieroth.ch`): Die Domain kostet ca. 10–20 CHF pro Jahr. In Settings → Pages unter „Custom domain“ eintragen und beim Domain-Anbieter einen CNAME auf `stezzph.github.io` setzen.
+**Eigene Domain** (optional, z. B. `stephanieroth.ch`): Die Domain kostet ca. 10–20 CHF pro Jahr. In Settings → Pages unter „Custom domain“ eintragen und beim Domain-Anbieter einen CNAME auf `stayincut.github.io` setzen.
 
 ---
 Schrift Urbanist: © The Urbanist Project Authors, SIL Open Font License 1.1 (`assets/fonts/Urbanist-OFL.txt`).
