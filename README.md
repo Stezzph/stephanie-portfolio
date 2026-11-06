@@ -46,19 +46,22 @@ Squarespace verschlüsselt seine Videos, deshalb wurden sie aus den Originaldate
 | Datei | Wo | Status |
 |---|---|---|
 | `assets/video/bluenews-1.mp4` | Social Media Projekte – Mayonnaise-Reel | ✅ |
-| `assets/video/tauschchallenge.mp4` | Social Media Projekte – Tauschchallenge (ersetzt die Strassenumfrage) | ✅ |
+| `assets/video/bluenews-2.mp4` | Social Media Projekte – Strassenumfrage Fashion-Trends 2026 | ✅ |
+| `assets/video/tauschchallenge.mp4` | Social Media Projekte – Tauschchallenge (unter Blue News) | ✅ |
 | `assets/video/swisscom-1.mp4` | Swisscom – Erklärvideo Data Literacy (Maya) | ✅ |
 | `assets/video/swisscom-2.mp4` | Swisscom – «Mit welchen Tools arbeitest du?» (1:51) | ⏳ Datei fehlt |
 | `assets/video/swisscom-3.mp4` | Swisscom – zweites Video (1:52) | ⏳ Datei fehlt |
 | `assets/video/swisscom-4.mp4` | Swisscom – Startvideo Ryanne | ✅ |
 | `assets/video/weihnachtsgeschichte.mp4` | Swisscom – Weihnachtsgeschichte Motion 2025 | ✅ |
 | `assets/video/soerenberg.mp4` | Projekte → Sörenberg (ca. 0:11) | ⏳ Datei fehlt |
-| `assets/video/bettmeralp.mp4` | Projekte → Bettmeralp | ⏳ Datei fehlt |
+| `assets/video/bettmeralp.mp4` | Projekte → Bettmeralp | ✅ |
+| `assets/video/goodbye-yesterday.mp4` | Projekte → Videographie, Goodbye Yesterday | ✅ |
+| `assets/video/trikot-verlosung.mp4` | Projekte → Videographie, Trikot-Verlosung | ✅ |
 
 Fehlt eine Datei, zeigt die Seite das Vorschaubild. Beim Abspielen erscheint der Hinweis, dass das Video bald verfügbar ist.
 **Tipp:** Videos vor dem Hochladen verkleinern (z. B. mit HandBrake, Preset „Fast 1080p30“). GitHub erlaubt max. 100 MB pro Datei, besser unter 25 MB.
 
-Neu ergänzt (gab es auf Squarespace noch nicht): ÜK-Portraits, Stillleben, «Lynn in Bewegung», Midoré-Café-Sitemap (Projekte) und das Weihnachtsvideo (Swisscom).
+Neu ergänzt (gab es auf Squarespace noch nicht): ÜK-Portraits, Stillleben, «Lynn in Bewegung», Midoré-Café-Sitemap, Goodbye Yesterday, Trikot-Verlosung (Projekte), Tauschchallenge (Social Media) und das Weihnachtsvideo (Swisscom).
 
 ## Schrift
 
