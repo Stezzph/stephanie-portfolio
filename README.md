@@ -74,10 +74,12 @@ Optional, falls Nachrichten direkt ankommen sollen: ein kostenloser Formular-Die
 ## Swisscom Projekte (Passwortschutz)
 
 GitHub Pages kann **keine Seite sicher mit Passwort schützen**. Zudem ist das Repository öffentlich: Alles, was hier hochgeladen wird, kann jede Person sehen, auch Bilder.
-Deshalb gilt aktuell:
-- Die Seite ist **nicht in der Navigation** verlinkt (nur über die Karte „Swisscom Arbeiten“ auf Creative Work).
+Auf Wunsch ist die Seite **öffentlich, aber versteckt**:
+- Sie ist **nicht in der Navigation** verlinkt (nur über die Karte „Swisscom Arbeiten“ auf Creative Work).
 - Sie hat `noindex`, erscheint also nicht in Google.
-- Vertrauliche Swisscom-Inhalte liegen **nicht** im Repository. Die Seite bietet stattdessen „Zugang anfragen“ per Mail.
+- Wer den Link oder dieses Repository kennt, kann die Inhalte trotzdem sehen.
+
+Videos der Swisscom-Seite: `assets/video/swisscom-1.mp4` bis `swisscom-4.mp4` (Reihenfolge wie auf der Seite).
 
 Sinnvolle Optionen für einen echten Passwortschutz (alle kostenlos):
 1. **Cloudflare Pages + Cloudflare Access** (empfohlen): Die ganze Seite oder nur `/swisscom-projekte` ist geschützt. Der Login läuft über einen Einmal-Code per E-Mail, bis 50 Personen gratis. Das ist echter serverseitiger Schutz.
