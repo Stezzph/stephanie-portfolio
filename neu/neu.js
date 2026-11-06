@@ -8,45 +8,30 @@
     return [h, m, s, f].map(function (n) { return String(n).padStart(2, '0'); }).join(':');
   }
 
-  /* Showreel: Timecode und Pause */
-  var hv = document.querySelector('.hero-video'), htc = document.getElementById('hero-tc'), hp = document.querySelector('.hero-pause');
-  if (hv) {
-    if (reduce) { hv.removeAttribute('autoplay'); hv.pause(); hp.textContent = 'Abspielen'; hp.setAttribute('aria-pressed', 'true'); }
-    hv.addEventListener('timeupdate', function () { htc.textContent = tc(hv.currentTime); });
-    hp.addEventListener('click', function () {
-      if (hv.paused) { hv.play(); hp.textContent = 'Pause'; hp.setAttribute('aria-pressed', 'false'); }
-      else { hv.pause(); hp.textContent = 'Abspielen'; hp.setAttribute('aria-pressed', 'true'); }
+  /* Showreel: Pause-Knopf */
+  var rv = document.querySelector('.reel-video'), rp = document.querySelector('.reel-pause');
+  if (rv) {
+    if (reduce) { rv.removeAttribute('autoplay'); rv.pause(); rp.textContent = 'Abspielen'; rp.setAttribute('aria-pressed', 'true'); }
+    rp.addEventListener('click', function () {
+      if (rv.paused) { rv.play(); rp.textContent = 'Pause'; rp.setAttribute('aria-pressed', 'false'); }
+      else { rv.pause(); rp.textContent = 'Abspielen'; rp.setAttribute('aria-pressed', 'true'); }
     });
   }
 
-  /* Kopfzeile wird beim Scrollen hell */
-  var top = document.querySelector('.top'), hero = document.querySelector('.hero');
-  function onScroll() { top.classList.toggle('is-solid', window.scrollY > hero.offsetHeight - 80); }
+  /* Kopfzeile bekommt beim Scrollen einen Hintergrund */
+  var top = document.querySelector('.top');
+  function onScroll() { top.classList.toggle('is-solid', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  /* Schnittleiste: Clips so breit wie die Abschnitte, Abspielkopf folgt dem Scrollen */
-  var clips = Array.prototype.slice.call(document.querySelectorAll('.tl-clip'));
-  var head = document.querySelector('.tl-head'), track = document.querySelector('.tl-track'), ttc = document.getElementById('tl-tc');
-  var secs = clips.map(function (c) { return document.getElementById(c.dataset.sec); });
-  function layout() {
-    secs.forEach(function (s, i) { clips[i].style.flexGrow = Math.max(1, Math.round(s.offsetHeight / 100)); });
-  }
-  function onTimeline() {
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-    head.style.left = (p * track.clientWidth) + 'px';
-    ttc.textContent = tc(p * 120); /* Die ganze Seite als 2-Minuten-Timeline */
-    var mid = window.scrollY + window.innerHeight * 0.4, active = 0;
-    secs.forEach(function (s, i) { if (s.offsetTop <= mid) active = i; });
-    clips.forEach(function (c, i) { c.classList.toggle('is-active', i === active); c.toggleAttribute('aria-current', i === active); });
-  }
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (ticking) return; ticking = true;
-    requestAnimationFrame(function () { onScroll(); onTimeline(); ticking = false; });
-  }, { passive: true });
-  window.addEventListener('resize', function () { layout(); onTimeline(); });
-  window.addEventListener('load', function () { layout(); onTimeline(); });
-  layout(); onScroll(); onTimeline();
+  /* Was ich mache: Zeilen auf- und zuklappen */
+  document.querySelectorAll('.svc-head').forEach(function (h) {
+    h.addEventListener('click', function () {
+      var li = h.parentElement, open = !li.classList.contains('is-open');
+      document.querySelectorAll('.svc').forEach(function (x) { x.classList.remove('is-open'); x.querySelector('.svc-head').setAttribute('aria-expanded', 'false'); });
+      if (open) { li.classList.add('is-open'); h.setAttribute('aria-expanded', 'true'); }
+    });
+  });
 
   /* Videos spielen beim Darüberfahren (nur mit Maus) */
   function hoverPlay(btn) {
@@ -73,7 +58,13 @@
       var f = c.dataset.filter;
       chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
       items.forEach(function (it) { it.hidden = !(f === 'alle' || it.dataset.cat === f); });
-      layout(); onTimeline();
+    });
+  });
+
+  /* «Arbeiten ansehen» filtert direkt */
+  document.querySelectorAll('[data-jump]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var c = document.querySelector('.f-chip[data-filter="' + a.dataset.jump + '"]'); if (c) c.click();
     });
   });
 
