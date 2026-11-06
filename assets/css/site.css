@@ -461,3 +461,9 @@ body.menu-open .site-header { --header-color: #000; position: fixed; }
   .sr-vrow { grid-template-columns: 1fr; }
   .sr-vrow .sr-video.is-portrait { height: 70vh; max-height: 520px; }
 }
+
+/* Midoré: Seitenentwürfe nebeneinander */
+.sr-extra-grid.is-three { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: clamp(16px, 2.5vw, 36px); }
+.sr-screen img { border: 1px solid #e6e6e6; border-radius: 6px; box-shadow: 0 12px 30px rgba(0, 0, 0, .08); }
+.sr-screen figcaption { margin-top: .7em; font-weight: 600; }
+@media (max-width: 767px) { .sr-extra-grid.is-three { grid-template-columns: 1fr; } }
